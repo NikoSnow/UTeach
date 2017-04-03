@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pagina Tutor</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="cssTut/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        U Teach
+                    </a>
+                </li>
+                <li>    
+                    <a href="#" onclick="formularioTutoria();" >Crear Tutoria</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                             <span class="glyphicon glyphicon-align-justify"></span>
+                        </a>
+                        <h1>Pagina Tutor</h1>
+                        
+                        <div id="formularioTutoria" class="container" style="display:none">
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4">
+                                    <div class="login-panel panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Registrar Tutoria</h3>
+                                        </div>
+
+                                        <div class="panel-body">
+
+                                               <form role="form" method="post" action="TutoriaControlador?action=crear">
+                                                                <input type="hidden" name="action" value="crearTutoria" />
+                                                                <div class="form-group">
+                                                                    <label>Nombre: </label>
+
+                                                                </div>    
+                                                                <div class="form-group">
+                                                                    <label>Materia: </label>
+                                                                    <input name="materia" class="form-control">                                                    
+                                                                </div>                                              
+                                                                <div class="form-group">
+                                                                    <label>Precio $15.000 hra  </label>
+                                                                 <div class="form-group">
+                                                                    <label>Dias : </label>
+                                                                        <input type="radio" name="lunes"> Lun
+                                                                        <input type="radio" name="martes" > Mar
+                                                                        <input type="radio" name="miercoles" > Mie
+                                                                        <input type="radio" name="jueves" > Jue
+                                                                        <input type="radio" name="viernes" > Vie
+                                                                </div>     
+                                                                <div class="form-group">
+                                                                    <label>horas disponibles:  </label>
+                                                                    <select name="dropdown">
+                                                                        <option value="Lunes">Mañana</option>
+                                                                        <option value="Martes">Tarde</option>
+                                                                        <option value="Miercoles">Noche</option>
+                                                                    </select>    
+                                                                </div>  
+                                                                <div class="botones"> 
+                                                                    <button type="submit" value="crear" class="btn btn  btn-primary btn-block">Crear</a><br/>
+                                                                    <button type="reset" class="btn btn  btn-primary btn-block">Cancelar</button>
+                                                                </div>
+                                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="jsTut/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="jsTut/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    function formularioTutoria(){
+        var cont = document.getElementById("formularioTutoria");
+        cont.style.display = "block";
+        return true;
+    }
+    </script>
+
+</body>
+
+</html>
